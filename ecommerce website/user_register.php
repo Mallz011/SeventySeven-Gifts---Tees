@@ -29,11 +29,11 @@ if(isset($_POST['submit'])){
       $message[] = 'email already exists!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'confirm password does not match!';
       }else{
          $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
          $insert_user->execute([$name, $email, $cpass]);
-         $message[] = 'registered successfully, login now please!';
+         $message[] = 'You have been successfully registered., login now please!';
       }
    }
 
